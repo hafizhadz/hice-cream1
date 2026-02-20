@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hice Cream - Ice Cream & Drinks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <img src="assets/images/logo.jpg" alt="Hice Cream Logo">
+                <span>HICE CREAM</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Ice Cream & Drinks</span>
+                <h1>Nikmati <span class="text-red">Ice Cream</span> & Minuman Segar</h1>
+                <p>Rasakan kesegaran ice cream dan minuman favorit dengan harga terjangkau. Hice Cream hadir untuk memanjakan lidah Anda.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">Lihat Menu</a>
+                    <a href="#order" class="btn btn-outline">Order Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Tentang Kami</span>
+                <h2>Kenapa <span class="text-red">Hice Cream</span>?</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Resep Autentik</h3>
+                    <p>Hidangan kami dibuat dengan resep autentik yang telah teruji.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Bahan Segar</h3>
+                    <p>Menggunakan bahan-bahan berkualitas tinggi dan selalu segar setiap hari.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Dibuat Fresh</h3>
+                    <p>Setiap pesanan dimasak fresh saat dipesan untuk menjaga kualitas rasa.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-tags"></i></div>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Nikmati hidangan berkualitas dengan harga yang ramah di kantong.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Menu Digital</span>
+                <h2>Menu <span class="text-red">Hice Cream</span></h2>
+            </div>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Semua</button>
+                <button class="category-btn" data-category="drink">Minuman</button>
+                <button class="category-btn" data-category="dessert">Dessert</button>
+            </div>
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be inserted by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order-section" id="order">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pesan Sekarang</span>
+                <h2>Order <span class="text-red">Online</span></h2>
+            </div>
+            <div class="order-layout">
+                <div class="order-menu">
+                    <h3><i class="fas fa-list"></i> Pilih Menu</h3>
+                    <div class="order-categories">
+                        <button class="order-cat-btn active" data-order-category="all">Semua</button>
+                        <button class="order-cat-btn" data-order-category="drink">Minuman</button>
+                        <button class="order-cat-btn" data-order-category="dessert">Dessert</button>
+                    </div>
+                    <div class="order-items" id="orderItems">
+                        <!-- Order items will be inserted by JS -->
+                    </div>
+                </div>
+                <div class="order-cart">
+                    <h3><i class="fas fa-shopping-cart"></i> Keranjang</h3>
+                    <div class="cart-items" id="cartItems">
+                        <div class="cart-empty">
+                            <i class="fas fa-shopping-basket"></i>
+                            <p>Keranjang masih kosong</p>
+                        </div>
+                    </div>
+                    <div class="cart-summary" id="cartSummary" style="display:none;">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">Rp 0</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="total">Rp 0</span>
+                        </div>
+                    </div>
+                    <div class="cart-actions" id="cartActions" style="display:none;">
+                        <button class="btn btn-outline btn-sm" id="clearCart">
+                            <i class="fas fa-trash"></i> Kosongkan
+                        </button>
+                        <button class="btn btn-primary btn-sm" id="checkoutBtn">
+                            <i class="fas fa-cash-register"></i> Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-receipt"></i> Checkout</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="custName"><i class="fas fa-user"></i> Nama</label>
+                        <input type="text" id="custName" placeholder="Nama lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="custPhone"><i class="fas fa-phone"></i> No. HP</label>
+                        <input type="tel" id="custPhone" placeholder="08xxxxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderType"><i class="fas fa-concierge-bell"></i> Tipe Order</label>
+                        <select id="orderType" required>
+                            <option value="dine-in">Dine In</option>
+                            <option value="takeaway">Take Away</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="tableGroup">
+                        <label for="tableNum"><i class="fas fa-chair"></i> Nomor Meja</label>
+                        <input type="number" id="tableNum" placeholder="Nomor meja" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="notes"><i class="fas fa-sticky-note"></i> Catatan</label>
+                        <textarea id="notes" placeholder="Catatan tambahan (opsional)" rows="2"></textarea>
+                    </div>
+                    <div class="checkout-summary" id="checkoutSummary">
+                        <!-- Filled by JS -->
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-check-circle"></i> Konfirmasi Pesanan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal success-modal">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Pesanan Berhasil!</h3>
+            <p>Terima kasih telah memesan di Hice Cream.</p>
+            <div class="order-receipt" id="orderReceipt">
+                <!-- Filled by JS -->
+            </div>
+            <button class="btn btn-primary" id="closeSuccess">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar (Mobile) -->
+    <div class="cart-sidebar-overlay" id="cartSidebarOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3><i class="fas fa-shopping-cart"></i> Keranjang</h3>
+            <button class="cart-sidebar-close" id="cartSidebarClose">&times;</button>
+        </div>
+        <div class="cart-sidebar-body" id="cartSidebarBody">
+            <!-- Filled by JS -->
+        </div>
+        <div class="cart-sidebar-footer" id="cartSidebarFooter" style="display:none;">
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="sidebarTotal">Rp 0</span>
+            </div>
+            <a href="#order" class="btn btn-primary btn-full" id="goToOrder">Lihat Pesanan</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.jpg" alt="Hice Cream">
+                        <span>HICE CREAM</span>
+                    </div>
+                    <p>Ice Cream & Drinks terbaik dengan harga terjangkau.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#order">Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Raya Hice Cream No. 1</li>
+                        <li><i class="fas fa-phone"></i> 0812-3456-7890</li>
+                        <li><i class="fas fa-clock"></i> 10:00 - 22:00 WIB</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hice Cream. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
